@@ -31,6 +31,33 @@
                         <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-success">Создать</a>
                     </div>
                 </div>
+
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Название</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($categories as $category)
+                                        <tr>
+                                            <td>{{ $category->id  }}</td>
+                                            <td>{{ $category->title  }}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
                 <!-- /.row -->
             </div><!-- /.container-fluid -->
         </section>
