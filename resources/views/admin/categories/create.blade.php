@@ -27,8 +27,21 @@
                 <!-- Small boxes (Stat box) -->
 
                 <div class="row">
-                    <div class="col-12">
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-success">Создать</a>
+                    <div class="col-12 h4">
+                        Добавление категории
+                    </div>
+                    <div class="col-6">
+                        <form action="{{ route('admin.category.store') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label for="title-category">Название категории</label>
+                                <input type="text" class="form-control" id="title-category" name="title" placeholder="Введите название">
+                                @error('title')
+                                    <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                @enderror
+                            </div>
+                            <input type="submit" class="btn btn-primary mt-3" value="Добавить">
+                        </form>
                     </div>
                 </div>
                 <!-- /.row -->
