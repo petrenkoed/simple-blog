@@ -31,8 +31,9 @@
                         Редактирование категории
                     </div>
                     <div class="col-6">
-                        <form action="" method="POST">
+                        <form action="{{ route('admin.category.update', $category->id ) }}" method="POST">
                             @csrf
+                            @method('PATCH')
                             <div class="form-group">
                                 <label for="title-category">Название категории</label>
                                 <input type="text" class="form-control" id="title-category" name="title" placeholder="Введите название" value="{{ $category->title }}">
