@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
 
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <div class="col-12 h4">
                         Добавление поста
                     </div>
@@ -35,12 +35,28 @@
                             @csrf
                             <div class="form-group">
                                 <label for="title-post">Название поста</label>
-                                <input type="text" class="form-control" id="title-post" name="title" placeholder="Введите название">
+                                <input type="text"
+                                       class="form-control"
+                                       id="title-post"
+                                       name="title"
+                                       placeholder="Введите название"
+                                       value="{{ old('title') }}"
+                                >
                                 @error('title')
                                     <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
                                 @enderror
                             </div>
-                            <input type="submit" class="btn btn-primary mt-3" value="Добавить">
+                            <div class="form-group">
+                                <textarea id="summernote"
+                                          name="content"
+                                >{{ old('content') }}</textarea>
+                                @error('content')
+                                <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary mt-3 w-50" value="Добавить">
+                            </div>
                         </form>
                     </div>
                 </div>
