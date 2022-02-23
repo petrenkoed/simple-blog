@@ -43,7 +43,7 @@
                                        value="{{ old('title') }}"
                                 >
                                 @error('title')
-                                    <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -51,7 +51,7 @@
                                           name="content"
                                 >{{ old('content') }}</textarea>
                                 @error('content')
-                                <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 @error('preview_image')
-                                <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 @error('main_image')
-                                <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -94,6 +94,9 @@
                                         >{{ $category->title }}</option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -106,6 +109,9 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @error('tag_ids')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
