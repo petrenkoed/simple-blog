@@ -31,14 +31,21 @@
                         Редактирование пользователя
                     </div>
                     <div class="col-6">
-                        <form action="{{ route('admin.category.update', $category->id ) }}" method="POST">
+                        <form action="{{ route('admin.user.update', $user->id ) }}" method="POST">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
-                                <label for="title-category">Имя пользователя</label>
-                                <input type="text" class="form-control" id="title-category" name="name" placeholder="Введите имя" value="{{ $user->name }}">
+                                <label for="title-user">Имя пользователя</label>
+                                <input type="text" class="form-control" id="title-user" name="name" placeholder="Введите имя" value="{{ $user->name }}">
                                 @error('name')
-                                    <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="email-user">Email пользователя</label>
+                                <input type="text" class="form-control" id="email-user" name="email" placeholder="Введите email" value="{{ $user->email }}">
+                                @error('email')
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-primary mt-3" value="Редактировать">

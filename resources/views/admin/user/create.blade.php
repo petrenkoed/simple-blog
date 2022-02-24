@@ -31,13 +31,27 @@
                         Добавление пользователя
                     </div>
                     <div class="col-6">
-                        <form action="{{ route('admin.category.store') }}" method="POST">
+                        <form action="{{ route('admin.user.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="title-category">Имя пользователя</label>
-                                <input type="text" class="form-control" id="title-category" name="name" placeholder="Введите имя">
+                                <label for="title-user">Имя пользователя</label>
+                                <input type="text" class="form-control" id="title-user" name="name" placeholder="Введите имя">
                                 @error('name')
-                                    <div class="text-danger">Это поле необходимо заполнить. <br> {{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="email-user">Email пользователя</label>
+                                <input type="text" class="form-control" id="email-user" name="email" placeholder="Введите email">
+                                @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password-user">Пароль пользователя</label>
+                                <input type="text" class="form-control" id="password-user" name="password" placeholder="Введите пароль">
+                                @error('password')
+                                <div class="text-danger"> {{ $message }}</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-primary mt-3" value="Добавить">
