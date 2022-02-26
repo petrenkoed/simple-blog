@@ -14,6 +14,7 @@
                     <a href="#!" class="blog-post-permalink">
                         <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
                     </a>
+
                 </div>
                 <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
                     <div class="blog-post-thumbnail-wrapper">
@@ -33,6 +34,7 @@
                         <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
                     </a>
                 </div>
+
             </div>
         </section>
         <div class="row">

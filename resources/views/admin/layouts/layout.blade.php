@@ -34,11 +34,19 @@
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
-        <ul class="navbar-nav">
+        <div class="col-12">
+        <ul class="navbar-nav justify-content-between">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
+            <li class="nav-item">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input type="submit" class="btn btn-danger" value="Выйти">
+                </form>
+            </li>
         </ul>
+        </div>
     </nav>
     <!-- /.navbar -->
 
