@@ -13,7 +13,8 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Админ</a></li>
-                            <li class="breadcrumb-item active">Пользователи</li>
+                            <li class="breadcrumb-item active"><a href="{{ route('admin.user.index') }}">Пользователм</a></li>
+                            <li class="breadcrumb-item active">Редактирование</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -51,17 +52,6 @@
 
                             <div class="form-group">
                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
-{{--                                <label>Выберите роль</label>--}}
-{{--                                <select class="form-control" name="role">--}}
-{{--                                    @foreach($roles as $id => $role)--}}
-{{--                                        <option value="{{ $id  }}"--}}
-{{--                                            {{ $id == $user->role ? ' selected' : '' }}--}}
-{{--                                        >{{ $role }}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-{{--                                @error('role')--}}
-{{--                                <div class="text-danger">{{ $message }}</div>--}}
-{{--                                @enderror--}}
                             </div>
                             <input type="submit" class="btn btn-primary mt-3" value="Редактировать">
                         </form>
