@@ -18,7 +18,8 @@ class User extends Authenticatable implements MustVerifyEmail
     const ROLE_ADMIN = 0;
     const ROLE_READER = 1;
 
-    public static function getRoles() {
+    public static function getRoles()
+    {
         return [
             self::ROLE_ADMIN => 'Админ',
             self::ROLE_READER => 'Читатель'
@@ -68,6 +69,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', 'post_id');
     }
 
-
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
 
 }
