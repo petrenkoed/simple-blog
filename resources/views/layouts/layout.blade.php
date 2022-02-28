@@ -27,14 +27,21 @@
                         <a class="nav-link text-uppercase" href="{{ route('main.index') }}">Блог</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <input type="submit" class="btn btn-danger" value="Выйти">
-                        </form>
-                    </li>
-                    <a class="btn btn-success ml-2" href="{{ route('login') }}">Войти</a>
+                <ul class="navbar-nav align-items-center mt-2 mt-lg-0">
+                    @if(auth()->user() == null)
+
+                        <a class="btn btn-success ml-2" href="{{ route('login') }}">Войти</a>
+                    @endif
+
+                    @if(auth()->user() != null)
+                            <li class="mr-3">{{ $user }}
+                            <li class="nav-item">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <input type="submit" class="btn btn-danger" value="Выйти">
+                            </form>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </nav>
